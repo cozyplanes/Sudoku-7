@@ -13,7 +13,7 @@
 int nums[9][9];
 bool ischanged[9][9];
 char getkey;
-int m,n,i,j,z;
+int status=0,m,n,i,j,z;
 int row=0,col=0,col1=0,col10=1;
   // this function change application state to recieve arrow keys without buffering them and hitting enter key  
   void setBufferedInput(bool enable) {
@@ -54,6 +54,7 @@ int row=0,col=0,col1=0,col10=1;
     return 0;
   }
 int rowcount(char w[8]){
+setBufferedInput(false);
 int gen1;
 	for (gen1=0; gen1<8 ; gen1++){
 	if (w[gen1]== ';'){
@@ -65,6 +66,7 @@ return row;
 
 
 int colcount(char m[8]){
+setBufferedInput(false);
 int gen2;
 	for (gen2=0; gen2<8 ; gen2++){
 	if(m[gen2]=='R'){
@@ -84,9 +86,11 @@ return col;
 
 int main(int argc, const char *argv[])
 {
-int xposition,yposition;
+int xup,yup,xdown,ydown,xright,yright,xleft,yleft,xnum,ynum;
 int gen;
+int num1;
 char s[8];
+char err[100]="Wrong Key Inserted";
    // Clearing terminal screen using system function
    system("clear");
   
@@ -122,37 +126,78 @@ char s[8];
 
       // calling required functions when up key is pressed
       case 65:
+      
+      printf("\033[6n");
+      scanf("%7s",s);
+      xup= rowcount(s);
+      yup= colcount(s);
+      if (yup>1) {
       printf("\033[1A");
+      }
 
       break;
       
       // calling required functions when down key is pressed
       case 66:
+      
+      printf("\033[6n");
+      scanf("%7s",s);
+      xdown= rowcount(s);
+      ydown= colcount(s);
+      if (xdown<9) {
       printf("\033[1B");
+      }
       break;
 
       // calling required functions when right key is preesed
       case 67:
+      printf("\033[6n");
+      scanf("%7s",s);
+      xright= rowcount(s);
+      yright= colcount(s);
+      if (yright<25) {
       printf("\033[3C");
-    //  moverightandsum();
-   //   random_insert();
-  //    printchanges();
+      }
       break;
+
+	case 113:
+   	system("clear");
+	setBufferedInput(true);
+	exit(status);
+	break;
+	
 
       // calling required functions when left key is pressed
       case 68:
       printf("\033[6n");
       scanf("%7s",s);
-      xposition= rowcount(s);
-      yposition= colcount(s);
-      if (yposition>2) {
+      xleft= rowcount(s);
+      yleft= colcount(s);
+      if (yleft>2) {
       printf("\033[3D");
       }
-	
-     // printf("%d|%d",row,col);
       break;
-      
-    }
+	
+      case 49:
+      printf("\033[6n");
+      scanf("%7s",s);
+      xnum= rowcount(s);
+      ynum= colcount(s);	
+      num1= getkey - '0';
+      printf("\033[%d;%dH%d",xnum,ynum,num1);
+      break;
+/*
+      default :	
+      printf("\033[6n");
+      scanf("%7s",s);
+      xnum= rowcount(s);
+      ynum= colcount(s);	
+	num1= getkey - '0';
+	printf("\033[12;10H%-99s",err);
+	printf("\033[%d;%dH",xnum,ynum);
+	break;
+*/
+  }   
   }
   
   return 0;
