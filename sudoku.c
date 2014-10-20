@@ -132,6 +132,7 @@ char err[100]="Wrong Key Inserted";
       xup= rowcount(s);
       yup= colcount(s);
       if (yup>1) {
+	//fixme
       printf("\033[1A");
       }
 
@@ -145,6 +146,7 @@ char err[100]="Wrong Key Inserted";
       xdown= rowcount(s);
       ydown= colcount(s);
       if (xdown<9) {
+	//fixme
       printf("\033[1B");
       }
       break;
@@ -156,6 +158,7 @@ char err[100]="Wrong Key Inserted";
       xright= rowcount(s);
       yright= colcount(s);
       if (yright<25) {
+	//fixme
       printf("\033[3C");
       }
       break;
@@ -174,6 +177,7 @@ char err[100]="Wrong Key Inserted";
       xleft= rowcount(s);
       yleft= colcount(s);
       if (yleft>2) {
+	//fixme
       printf("\033[3D");
       }
       break;
