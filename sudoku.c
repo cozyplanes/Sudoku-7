@@ -68,7 +68,7 @@ return row;
 int colcount(char m[8]){
 setBufferedInput(false);
 int gen2;
-	for (gen2=0; gen2<8 ; gen2++){
+for (gen2=0; gen2<8 ; gen2++){
 	if(m[gen2]=='R'){
 	col1 = m[gen2-1]- '0';
 	if (m[gen2-2]== ';') {
@@ -84,9 +84,10 @@ int gen2;
 return col;
 }
 
+
 int main(int argc, const char *argv[])
 {
-int xup,yup,xdown,ydown,xright,yright,xleft,yleft,xnum,ynum;
+int xup,yup,xdown,ydown,xright,yright,xleft,yleft,xnum,ynum,xtable=0,ytable=0,xdel,ydel;
 int gen;
 int num1;
 char s[8];
@@ -113,14 +114,17 @@ char err[100]="Wrong Key Inserted";
 }
     puts("");
   }
+	printf("\033[2;40H%-20s","Hints:");
+	printf("\033[3;40H%-20s","Use Arrow Keys For Moving Between Cells");
+	printf("\033[4;40H%-20s","Press P for Print Sudoku Table");
+	printf("\033[5;40H%-20s","Press S for Solve");
+	printf("\033[6;40H%-20s","Press Q for Quit");
 
-	
       printf("\033[1;2H");
       setBufferedInput(false);
       while(1){
       // getting arrow keys from user repeatedly 
-      getkey=getchar(); 
-
+	getkey= getchar();
       // check which arrow keys are pressed
       switch(getkey){
 
@@ -132,7 +136,6 @@ char err[100]="Wrong Key Inserted";
       xup= rowcount(s);
       yup= colcount(s);
       if (yup>1) {
-	//fixme
       printf("\033[1A");
       }
 
@@ -146,9 +149,8 @@ char err[100]="Wrong Key Inserted";
       xdown= rowcount(s);
       ydown= colcount(s);
       if (xdown<9) {
-	//fixme
       printf("\033[1B");
-      }
+	}
       break;
 
       // calling required functions when right key is preesed
@@ -158,8 +160,7 @@ char err[100]="Wrong Key Inserted";
       xright= rowcount(s);
       yright= colcount(s);
       if (yright<25) {
-	//fixme
-      printf("\033[3C");
+      printf("\033[1C");
       }
       break;
 
@@ -177,8 +178,7 @@ char err[100]="Wrong Key Inserted";
       xleft= rowcount(s);
       yleft= colcount(s);
       if (yleft>2) {
-	//fixme
-      printf("\033[3D");
+      printf("\033[1D");
       }
       break;
 	
@@ -187,19 +187,67 @@ char err[100]="Wrong Key Inserted";
       scanf("%7s",s);
       xnum= rowcount(s);
       ynum= colcount(s);	
-      num1= getkey - '0';
-      printf("\033[%d;%dH%d",xnum,ynum,num1);
+	if (ynum != 1) {
+  	 if (ynum%3==2) {
+         num1= getkey - '0';
+    	 nums[(ynum/3)][xnum-1]=num1;
+	 ischanged[ynum/3][xnum-1]=true;	
+         printf("\033[%d;%dH%d",xnum,ynum,num1);	
+	}
+}
       break;
-/*
-      default :	
+	
+	
+	case 127:
       printf("\033[6n");
       scanf("%7s",s);
-      xnum= rowcount(s);
-      ynum= colcount(s);	
-	num1= getkey - '0';
-	printf("\033[12;10H%-99s",err);
-	printf("\033[%d;%dH",xnum,ynum);
+      xdel= rowcount(s);
+      ydel= colcount(s);	
+	if (ydel%3==0) {
+      nums[ydel/3][xdel-1]=0;
+	ischanged[ydel/3][xdel-1]=true;	
+      printf("\033[%d;%dH%1s",xdel,ydel-1," ");	
+         printf("\033[%d;%dH",xdel,ydel-3);	
+	}
 	break;
+/*	
+	case 27:
+      printf("\033[6n");
+      scanf("%7s",s);
+      xdel= rowcount(s);
+      ydel = colcount(s);	
+	if (ydel != 1) {
+	if (ydel%3==0) {
+      nums[ydel/3][xdel-1]=0;	
+	ischanged[ydel/3][xdel-1]=true;	
+      printf("\033[%d;%dH%-2s",xdel,ydel,"D");	
+	}
+}
+	break;
+*/
+	case 112:	
+	  for (m = 0; m < 9; m++) {
+   	  for (n = 0; n < 9; n++) {
+	xtable= 1+ (n*2);
+	ytable= 13+ m;
+	printf("\033[%d;%dH%s",ytable+1,xtable-1,"|");
+		printf("\033[%d;%dH%-3d",ytable+1,xtable, nums[n][m]);
+      printf("\033[1;2H");
+     	  }
+	puts("");
+    }
+	break;
+/*
+      default :	
+      //printf("\033[6n");
+      //scanf("%7s",s);
+      //xnum= rowcount(s);
+     // ynum= colcount(s);	
+	num1= getkey;
+//	printf("\033[12;10H%-99s",err);
+	printf("\033[40;10H%d",num1);
+break;
+
 */
   }   
   }
