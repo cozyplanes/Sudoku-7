@@ -159,7 +159,7 @@ char err[100]="Wrong Key Inserted";
       scanf("%7s",s);
       xright= rowcount(s);
       yright= colcount(s);
-      if (yright<25) {
+      if (yright<27) {
       printf("\033[1C");
       }
       break;
@@ -198,16 +198,136 @@ char err[100]="Wrong Key Inserted";
       break;
 	
 	
+      case 50:
+      printf("\033[6n");
+      scanf("%7s",s);
+      xnum= rowcount(s);
+      ynum= colcount(s);	
+	if (ynum != 1) {
+  	 if (ynum%3==2) {
+         num1= getkey - '0';
+    	 nums[(ynum/3)][xnum-1]=num1;
+	 ischanged[ynum/3][xnum-1]=true;	
+         printf("\033[%d;%dH%d",xnum,ynum,num1);	
+	}
+}
+      break;
+	
+      case 51:
+      printf("\033[6n");
+      scanf("%7s",s);
+      xnum= rowcount(s);
+      ynum= colcount(s);	
+	if (ynum != 1) {
+  	 if (ynum%3==2) {
+         num1= getkey - '0';
+    	 nums[(ynum/3)][xnum-1]=num1;
+	 ischanged[ynum/3][xnum-1]=true;	
+         printf("\033[%d;%dH%d",xnum,ynum,num1);	
+	}
+}
+      break;
+	
+      case 52:
+      printf("\033[6n");
+      scanf("%7s",s);
+      xnum= rowcount(s);
+      ynum= colcount(s);	
+	if (ynum != 1) {
+  	 if (ynum%3==2) {
+         num1= getkey - '0';
+    	 nums[(ynum/3)][xnum-1]=num1;
+	 ischanged[ynum/3][xnum-1]=true;	
+         printf("\033[%d;%dH%d",xnum,ynum,num1);	
+	}
+}
+      break;
+	
+      case 53:
+      printf("\033[6n");
+      scanf("%7s",s);
+      xnum= rowcount(s);
+      ynum= colcount(s);	
+	if (ynum != 1) {
+  	 if (ynum%3==2) {
+         num1= getkey - '0';
+    	 nums[(ynum/3)][xnum-1]=num1;
+	 ischanged[ynum/3][xnum-1]=true;	
+         printf("\033[%d;%dH%d",xnum,ynum,num1);	
+	}
+}
+      break;
+	
+      case 54:
+      printf("\033[6n");
+      scanf("%7s",s);
+      xnum= rowcount(s);
+      ynum= colcount(s);	
+	if (ynum != 1) {
+  	 if (ynum%3==2) {
+         num1= getkey - '0';
+    	 nums[(ynum/3)][xnum-1]=num1;
+	 ischanged[ynum/3][xnum-1]=true;	
+         printf("\033[%d;%dH%d",xnum,ynum,num1);	
+	}
+}
+      break;
+	
+      case 55:
+      printf("\033[6n");
+      scanf("%7s",s);
+      xnum= rowcount(s);
+      ynum= colcount(s);	
+	if (ynum != 1) {
+  	 if (ynum%3==2) {
+         num1= getkey - '0';
+    	 nums[(ynum/3)][xnum-1]=num1;
+	 ischanged[ynum/3][xnum-1]=true;	
+         printf("\033[%d;%dH%d",xnum,ynum,num1);	
+	}
+}
+      break;
+	
+      case 56:
+      printf("\033[6n");
+      scanf("%7s",s);
+      xnum= rowcount(s);
+      ynum= colcount(s);	
+	if (ynum != 1) {
+  	 if (ynum%3==2) {
+         num1= getkey - '0';
+    	 nums[(ynum/3)][xnum-1]=num1;
+	 ischanged[ynum/3][xnum-1]=true;	
+         printf("\033[%d;%dH%d",xnum,ynum,num1);	
+	}
+}
+      break;
+	
+      case 57:
+      printf("\033[6n");
+      scanf("%7s",s);
+      xnum= rowcount(s);
+      ynum= colcount(s);	
+	if (ynum != 1) {
+  	 if (ynum%3==2) {
+         num1= getkey - '0';
+    	 nums[(ynum/3)][xnum-1]=num1;
+	 ischanged[ynum/3][xnum-1]=true;	
+         printf("\033[%d;%dH%d",xnum,ynum,num1);	
+	}
+}
+      break;
+	
 	case 127:
       printf("\033[6n");
       scanf("%7s",s);
       xdel= rowcount(s);
       ydel= colcount(s);	
 	if (ydel%3==0) {
-      nums[ydel/3][xdel-1]=0;
-	ischanged[ydel/3][xdel-1]=true;	
+      nums[(ydel/3)-1][xdel-1]=0;
+//	ischanged[ydel/3][xdel-1]=true;	
       printf("\033[%d;%dH%1s",xdel,ydel-1," ");	
-         printf("\033[%d;%dH",xdel,ydel-3);	
+         printf("\033[1D");	
 	}
 	break;
 /*	
@@ -232,10 +352,10 @@ char err[100]="Wrong Key Inserted";
 	ytable= 13+ m;
 	printf("\033[%d;%dH%s",ytable+1,xtable-1,"|");
 		printf("\033[%d;%dH%-3d",ytable+1,xtable, nums[n][m]);
-      printf("\033[1;2H");
      	  }
 	puts("");
     }
+      printf("\033[1;2H");
 	break;
 /*
       default :	
