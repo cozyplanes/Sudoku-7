@@ -84,11 +84,173 @@ for (gen2=0; gen2<8 ; gen2++){
 return col;
 }
 
+bool checkrows(){
+int a,b,c;
+bool correct=true;
+for (a = 0; a < 9; a++) {
+	for (b = 0; b < 8; b++) {
+	for (c = b+1; c < 9; c++) {
+		if (nums[c][a] != 0 && nums[b][a] != 0 && nums[c][a]==nums[b][a]) {
+			correct=false;
+		}
+	}
+	}
+}
+return correct;
+}
+
+bool checkcols(){
+int a1,b1,c1;
+bool correct1=true;
+for (a1 = 0; a1 < 9; a1++) {
+	for (b1 = 0; b1 < 8; b1++) {
+	for (c1 = b1+1; c1 < 9; c1++) {
+		if (nums[a1][c1] != 0 && nums[a1][b1] != 0 && nums[a1][c1]==nums[a1][b1]) {
+			correct1=false;
+		}
+	}
+	}
+}
+return correct1;
+}
+
+bool checkboxes(){
+int s,d2,a2,b2,c2;
+bool correct2=true;
+//for (s = 0; i <= 2; i++) {
+for (a2 = 0; a2 < 3; a2++) {
+	for (b2 = 0 ; b2 < 3; b2++) {
+	if((b2+1)%3==1){
+		if ((a2+1)%3==1) {
+	for (d2 = a2+1; d2 < 3; d2++) {
+	for (c2 = b2+1; c2 < 3; c2++) {
+		if (nums[c2][d2] != 0 && nums[b2][a2] != 0 && nums[c2][d2]==nums[b2][a2]) {
+			correct2=false;
+		}
+		}
+		}
+		}
+		if ((a2+1)%3==2) {
+	for (d2 = a2-1; d2 < 3; d2++) {
+	for (c2 = b2+1; c2 < 3; c2++) {
+			if (d2 != a2) {
+		if (nums[c2][d2] != 0 && nums[b2][a2] != 0 && nums[c2][d2]==nums[b2][a2]) {
+			correct2=false;
+		}
+		}
+		}
+		}
+		}
+		
+		if ((a2+1)%3==0) {
+	for (d2 = a2-2; d2 < 3; d2++) {
+	for (c2 = b2+1; c2 < 3; c2++) {
+			if (d2 != a2) {
+		if (nums[c2][d2] != 0 && nums[b2][a2] != 0 && nums[c2][d2]==nums[b2][a2]) {
+			correct2=false;
+		}
+		}
+		}
+		}
+		}		
+}
+		
+	if((b2+1)%3==2){
+		if ((a2+1)%3==1) {
+	for (d2 = a2+1; d2 < 3; d2++) {
+	for (c2 = b2-1; c2 < 3; c2++) {
+		if (c2 != b2) {
+		if (nums[c2][d2] != 0 && nums[b2][a2] != 0 && nums[c2][d2]==nums[b2][a2]) {
+			correct2=false;
+		}
+		}
+		}
+		}
+		}
+
+		if ((a2+1)%3==2) {
+	for (d2 = a2-1; d2 < 3; d2++) {
+	for (c2 = b2-1; c2 < 3; c2++) {
+			if (d2 != a2) {
+			if (c2 != b2) {
+		if (nums[c2][d2] != 0 && nums[b2][a2] != 0 && nums[c2][d2]==nums[b2][a2]) {
+			correct2=false;
+		}
+		}
+		}
+		}
+		}
+		}
+		if ((a2+1)%3==0) {
+	for (d2 = a2-2; d2 < 3; d2++) {
+	for (c2 = b2-1; c2 < 3; c2++) {
+			if (d2 != a2) {
+			if (c2 != b2) {
+		if (nums[c2][d2] != 0 && nums[b2][a2] != 0 && nums[c2][d2]==nums[b2][a2]) {
+		if (nums[c2][d2] != 0 && nums[b2][a2] != 0 && nums[c2][d2]==nums[b2][a2]) {
+			correct2=false;
+		}
+		}
+		}
+		}
+		}
+		}				
+		
+}
+}	
+	
+	if((b2+1)%3==0){
+		if ((a2+1)%3==1) {
+	for (d2 = a2+1; d2 < 3; d2++) {
+	for (c2 = b2-2; c2 < 3; c2++) {
+		if (c2 != b2) {
+		if (nums[c2][d2] != 0 && nums[b2][a2] != 0 && nums[c2][d2]==nums[b2][a2]) {
+			correct2=false;
+		}
+		}
+		}
+		}
+		}
+
+
+		if ((a2+1)%3==2) {
+	for (d2 = a2-1; d2 < 3; d2++) {
+	for (c2 = b2-2; c2 < 3; c2++) {
+			if (d2 != a2) {
+			if (c2 != b2) {
+		if (nums[c2][d2] != 0 && nums[b2][a2] != 0 && nums[c2][d2]==nums[b2][a2]) {
+			correct2=false;
+		
+		}
+		}
+		}
+		}
+		}
+		}
+		if ((a2+1)%3==0) {
+	for (d2 = a2-2; d2 < 3; d2++) {
+	for (c2 = b2-2; c2 < 3; c2++) {
+			if (d2 != a2) {
+			if (c2 != b2) {
+		if (nums[c2][d2] != 0 && nums[b2][a2] != 0 && nums[c2][d2]==nums[b2][a2]) {
+			correct2=false;
+		}
+		}
+		}
+		}
+		}				
+		}	
+}	
+	}
+	}
+return correct2;
+}
 
 int main(int argc, const char *argv[])
 {
 int xup,yup,xdown,ydown,xright,yright,xleft,yleft,xnum,ynum,xtable=0,ytable=0,xdel,ydel;
 int gen;
+bool checkrow,checkcol,checkbox;
 int num1;
 char s[8];
 char err[100]="Wrong Key Inserted";
@@ -116,9 +278,10 @@ char err[100]="Wrong Key Inserted";
   }
 	printf("\033[2;40H%-20s","Hints:");
 	printf("\033[3;40H%-20s","Use Arrow Keys For Moving Between Cells");
-	printf("\033[4;40H%-20s","Press P for Print Sudoku Table");
-	printf("\033[5;40H%-20s","Press S for Solve");
-	printf("\033[6;40H%-20s","Press Q for Quit");
+	printf("\033[4;40H%-20s","Press P for Print Sudoku Puzzle");
+	printf("\033[5;40H%-20s","Press T for Testing Sudoku Puzzle");
+	printf("\033[6;40H%-20s","Press S for Solve");
+	printf("\033[7;40H%-20s","Press Q for Quit");
 
       printf("\033[1;2H");
       setBufferedInput(false);
@@ -357,6 +520,38 @@ char err[100]="Wrong Key Inserted";
     }
       printf("\033[1;2H");
 	break;
+	
+	
+	case 116:
+	checkrow= checkrows();
+	checkcol= checkcols();
+	checkbox= checkboxes();
+
+	if (checkrow==false) {
+	printf("\033[11;5H%15s","                                   ");
+	printf("\033[11;5H%15s","Same numbers inserteed in few Rows");
+   	printf("\033[1;2H");
+	}
+	
+	else if (checkcol==false) {
+	printf("\033[11;5H%15s","                                   ");
+	printf("\033[11;5H%15s","Same numbers inserted in few Coloumns");
+   	printf("\033[1;2H");
+	}
+	
+	else if (checkbox==false) {
+	printf("\033[11;5H%15s","                                   ");
+	printf("\033[11;5H%15s","Same numbers inserted in few Boxes");
+   	printf("\033[1;2H");
+	}
+	else{	
+	printf("\033[11;5H%15s","                                   ");
+	printf("\033[11;5H%15s","Correct Puzzle");
+   	printf("\033[1;2H");
+	}
+
+	break;
+
 /*
       default :	
       //printf("\033[6n");
