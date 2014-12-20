@@ -1,7 +1,7 @@
 // This project is an experimental project developed by Vahid_Sheigani(Mr.)
 // Dated is 2014.09.13
 //this is test`
-//this is test 2
+//this is test 122
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -22,7 +22,7 @@ char getkey;
 int tempx=0,tempy=0,tempz=0;
 int status=0,m,n,i,j,z;
 int row=0,col=0,col1=0,col10=1;
-  // this function change application state to recieve arrow keys without buffering them and hitting enter key  
+  // this function change application state to recieve arrow keys without buffering them and hitting enter key
   void setBufferedInput(bool enable) {
     static bool enabled = true;
     static struct termios old;
@@ -39,7 +39,7 @@ int row=0,col=0,col1=0,col10=1;
     }
   }
   // below function print any changed number in nums array in specified loction
-  int printchanges(){ 
+  int printchanges(){
   int ss2,ss1,ss3;
   int xposition;
   for (ss1 = 0; ss1 < 9; ss1++) {
@@ -50,7 +50,7 @@ int row=0,col=0,col1=0,col10=1;
        printf("\033[%d;%dH%-s",ss2+1,xposition,"    ");
        printf("\033[%d;%dH%-d",ss2+1,xposition,nums[ss2][ss1]);
       }
-      else{   
+      else{
        xposition=((ss1)*5)+2;
        printf("\033[%d;%dH%-s",ss2+1,xposition,"    ");
       }
@@ -83,7 +83,7 @@ for (gen2=0; gen2<8 ; gen2++){
 		break;
 	}
 	else{
-	col10= m[gen2-2]- '0';	
+	col10= m[gen2-2]- '0';
 	col= col10*10+col1;
 	}
 	}
@@ -149,7 +149,7 @@ for (a2 = 3*s ; a2 < (s+1)*3; a2++) {
 		}
 		}
 		}
-		
+
 		if ((a2+1)%3==0) {
 	for (d2 = a2-2; d2 < 3; d2++) {
 	for (c2 = b2+1; c2 < 3; c2++) {
@@ -160,9 +160,9 @@ for (a2 = 3*s ; a2 < (s+1)*3; a2++) {
 		}
 		}
 		}
-		}		
+		}
 }
-		
+
 	if((b2+1)%3==2){
 		if ((a2+1)%3==1) {
 	for (d2 = a2+1; d2 < 3; d2++) {
@@ -202,11 +202,11 @@ for (a2 = 3*s ; a2 < (s+1)*3; a2++) {
 		}
 		}
 		}
-		}				
-		
+		}
+
 }
-}	
-	
+}
+
 	if((b2+1)%3==0){
 		if ((a2+1)%3==1) {
 	for (d2 = a2+1; d2 < 3; d2++) {
@@ -228,7 +228,7 @@ for (a2 = 3*s ; a2 < (s+1)*3; a2++) {
 			if (c2 != b2) {
 		if (nums[c2][d2] != 0 && nums[b2][a2] != 0 && nums[c2][d2]==nums[b2][a2]) {
 			correct2=false;
-		
+
 		}
 		}
 		}
@@ -246,9 +246,9 @@ for (a2 = 3*s ; a2 < (s+1)*3; a2++) {
 		}
 		}
 		}
-		}				
-		}	
-}	
+		}
+		}
+}
 	}
 	}
 	}
@@ -351,21 +351,21 @@ for (s = 0; s <= 2; s++) {
 for (n = 0; n <= 2; n++) {
   j3=3*n;
   k3= (3*(n+1))-1;
-  
+
 	for (b2 = n2; b2 <= m2; b2++) {
 	for (a2 = j3; a2 <= k3; a2++) {
 //	if((b2+1)%3==1){
 //		if ((a2+1)%3==1) {
-//	
+//
 	for (p= n2; p <= m2; p++) {
 	for (o = j3; o <= k3; o++) {
-		if (answers[b2][a2] == 0 && answers[p][o] != 0 && sug[b2][a2][answers[p][o]-1]==answers[p][o]) {		
+		if (answers[b2][a2] == 0 && answers[p][o] != 0 && sug[b2][a2][answers[p][o]-1]==answers[p][o]) {
 			sug[b2][a2][answers[p][o]-1]=0;
 		}
   }
 		}
 		}
-  }	
+  }
   }
 }
 return 0;
@@ -435,56 +435,56 @@ for (s = 0; s <= 2; s++) {
 for (n = 0; n <= 2; n++) {
   j3=3*n;
   k3= (3*(n+1))-1;
-  
+
 	for (b2 = n2; b2 <= m2; b2++) {
 	for (a2 = j3; a2 <= k3; a2++) {
 //	if((b2+1)%3==1){
 //		if ((a2+1)%3==1) {
-//	
+//
 	for (p= n2; p <= m2; p++) {
 	for (o = j3; o <= k3; o++) {
-		if (tempanswers[b2][a2] == 0 && tempanswers[p][o] != 0 && sug[b2][a2][tempanswers[p][o]-1]==tempanswers[p][o]) {		
+		if (tempanswers[b2][a2] == 0 && tempanswers[p][o] != 0 && sug[b2][a2][tempanswers[p][o]-1]==tempanswers[p][o]) {
 			sug[b2][a2][tempanswers[p][o]-1]=0;
       done=true;
 		}
   }
 		}
 		}
-  }	
   }
-  
+  }
+
   }
 	/*	if ((a2+1)%3==2) {
 	for (d2 = a2-1; d2 < 3; d2++) {
 	for (c2 = b2+1; c2 < 3; c2++) {
 			if (d2 != a2) {
-		
-		if (nums[c2][d2] == 0 && nums[b2][a2] != 0 && sug[c2][d2][nums[b2][a2]-1]==nums[b2][a2]) {		
+
+		if (nums[c2][d2] == 0 && nums[b2][a2] != 0 && sug[c2][d2][nums[b2][a2]-1]==nums[b2][a2]) {
       sug[c2][a2][nums[b2][a2]-1]=0;
 		}
 		}
 		}
 		}
-    }	
+    }
 		if ((a2+1)%3==0) {
 	for (d2 = a2-2; d2 < 3; d2++) {
 	for (c2 = b2+1; c2 < 3; c2++) {
-			if (d2 != a2) {    
-		if (nums[c2][d2] == 0 && nums[b2][a2] != 0 && sug[c2][d2][nums[b2][a2]-1]==nums[b2][a2]) {		
+			if (d2 != a2) {
+		if (nums[c2][d2] == 0 && nums[b2][a2] != 0 && sug[c2][d2][nums[b2][a2]-1]==nums[b2][a2]) {
       sug[c2][a2][nums[b2][a2]-1]=0;
 		}
 		}
 		}
-		}		
-    } 
+		}
+    }
 }
-		
+
 	if((b2+1)%3==2){
 		if ((a2+1)%3==1) {
 	for (d2 = a2+1; d2 < 3; d2++) {
 	for (c2 = b2-1; c2 < 3; c2++) {
-		if (c2 != b2) {	
-		if (nums[c2][d2] == 0 && nums[b2][a2] != 0 && sug[c2][d2][nums[b2][a2]-1]==nums[b2][a2]) {		
+		if (c2 != b2) {
+		if (nums[c2][d2] == 0 && nums[b2][a2] != 0 && sug[c2][d2][nums[b2][a2]-1]==nums[b2][a2]) {
       sug[c2][a2][nums[b2][a2]-1]=0;
 		}
 		}
@@ -495,8 +495,8 @@ for (n = 0; n <= 2; n++) {
 		if ((a2+1)%3==2) {
 	for (d2 = a2-1; d2 < 3; d2++) {
 	for (c2 = b2-1; c2 < 3; c2++) {
-			if (d2 != a2 && c2 != b2) {	
-		if (nums[c2][d2] == 0 && nums[b2][a2] != 0 && sug[c2][d2][nums[b2][a2]-1]==nums[b2][a2]) {		
+			if (d2 != a2 && c2 != b2) {
+		if (nums[c2][d2] == 0 && nums[b2][a2] != 0 && sug[c2][d2][nums[b2][a2]-1]==nums[b2][a2]) {
       sug[c2][a2][nums[b2][a2]-1]=0;
 		}
 		}
@@ -507,25 +507,25 @@ for (n = 0; n <= 2; n++) {
 		if ((a2+1)%3==0) {
 	for (d2 = a2-2; d2 < 3; d2++) {
 	for (c2 = b2-1; c2 < 3; c2++) {
-		 if (d2 != a2 && c2 != b2) {	
-		if (nums[c2][d2] == 0 && nums[b2][a2] != 0 && sug[c2][d2][nums[b2][a2]-1]==nums[b2][a2]) {		
+		 if (d2 != a2 && c2 != b2) {
+		if (nums[c2][d2] == 0 && nums[b2][a2] != 0 && sug[c2][d2][nums[b2][a2]-1]==nums[b2][a2]) {
       sug[c2][a2][nums[b2][a2]-1]=0;
 		}
 		}
 		}
 		}
-		}				
-		
+		}
+
 }
-	
-	
+
+
 	if((b2+1)%3==0){
 		if ((a2+1)%3==1) {
 	for (d2 = a2+1; d2 < 3; d2++) {
 	for (c2 = b2-2; c2 < 3; c2++) {
 		if (c2 != b2) {
-		
-		if (nums[c2][d2] == 0 && nums[b2][a2] != 0 && sug[c2][d2][nums[b2][a2]-1]==nums[b2][a2]) {		
+
+		if (nums[c2][d2] == 0 && nums[b2][a2] != 0 && sug[c2][d2][nums[b2][a2]-1]==nums[b2][a2]) {
       sug[c2][a2][nums[b2][a2]-1]=0;
 		}
 		}
@@ -536,9 +536,9 @@ for (n = 0; n <= 2; n++) {
 	for (d2 = a2-1; d2 < 3; d2++) {
 	for (c2 = b2-2; c2 < 3; c2++) {
 			if (d2 != a2 && c2 != b2) {
-	
-		
-		if (nums[c2][d2] == 0 && nums[b2][a2] != 0 && sug[c2][d2][nums[b2][a2]-1]==nums[b2][a2]) {		
+
+
+		if (nums[c2][d2] == 0 && nums[b2][a2] != 0 && sug[c2][d2][nums[b2][a2]-1]==nums[b2][a2]) {
       sug[c2][a2][nums[b2][a2]-1]=0;
 		}
 		}
@@ -550,16 +550,16 @@ for (n = 0; n <= 2; n++) {
 	for (d2 = a2-2; d2 < 3; d2++) {
 	for (c2 = b2-2; c2 < 3; c2++) {
 			if (d2 != a2) {
-			if (c2 != b2) {	
-		if (nums[c2][d2] == 0 && nums[b2][a2] != 0 && sug[c2][d2][nums[b2][a2]-1]==nums[b2][a2]) {		
+			if (c2 != b2) {
+		if (nums[c2][d2] == 0 && nums[b2][a2] != 0 && sug[c2][d2][nums[b2][a2]-1]==nums[b2][a2]) {
       sug[c2][a2][nums[b2][a2]-1]=0;
 		}
 		}
 		}
-		}				
-	
-    }	
-    }	
+		}
+
+    }
+    }
 }
 	}
 */
@@ -569,15 +569,15 @@ return done;
 int checkifone(){
   int l,o,w,e,l1,o1,w1;
   int free[9][9];
- 
- for (l1=0 ; l1<9; l1++){ 
+
+ for (l1=0 ; l1<9; l1++){
  for (o1=0 ; o1<9; o1++){
  free[l1][o1]=0;
  }
  }
 
 
- for (l=0 ; l<9; l++){ 
+ for (l=0 ; l<9; l++){
  for (o=0 ; o<9; o++){
  for (w=0 ; w<9; w++){
  if(sug[l][o][w]==0){
@@ -606,7 +606,7 @@ void fillanswers(){
 int q,qq;
 for(q=0; q<9; q++){
   for(qq=0; qq<9 ; qq++){
-  
+
       if(nums[q][qq] != 0){
       answers[q][qq]=nums[q][qq];
       }
@@ -674,7 +674,7 @@ for(q=0; q<9; q++){
     else{
     sug[q][qq][qqq-1]=11;
     }
-  }  
+  }
 }
 }
 }
@@ -687,14 +687,14 @@ for(i=0; i<9; i++){
     solved=false;
     }else{
     solved=true;
-    }    
+    }
   }
 }
 return 0;
 }
 
 int filltemp(){
- for (n=0 ; n<9; n++){ 
+ for (n=0 ; n<9; n++){
    for (m=0 ; m<9; m++){
      tempanswers[n][m]=answers[n][m];
    }
@@ -753,7 +753,7 @@ int q,y,e,mj;
 for (con=1;con<1000; con++ ){
 //  ifsolved();
 //  if(solved==false){
- for (o=0 ; o<9; o++){ 
+ for (o=0 ; o<9; o++){
   for (l=0 ; l<9; l++){
    if (tempanswers[l][o]==0){
     for (w=0 ; w<9; w++){
@@ -773,7 +773,7 @@ for (con=1;con<1000; con++ ){
       }else{
       tempanswers[tempx][tempy]=0;
       sug[tempx][tempy][tempz]=0;
-      wrong[tempx][tempy][tempz]=true; 
+      wrong[tempx][tempy][tempz]=true;
       //guessed[tempx][tempy]=false;
       o=tempy;l=tempx;
       for (mj=0; mj<9; mj++){
@@ -787,7 +787,7 @@ for (con=1;con<1000; con++ ){
         l=0;o+=1;
       }
       break;
-      
+
    }
  }
     ifwrong(l,o);
@@ -795,12 +795,12 @@ for (con=1;con<1000; con++ ){
    }else if(wrong[tempx][tempy][tempz]==false){
       tempanswers[tempx][tempy]=0;
       sug[tempx][tempy][tempz]=0;
-      wrong[tempx][tempy][tempz]=true; 
+      wrong[tempx][tempy][tempz]=true;
       w=0;
       guessed[tempx][tempy]=false;
         o=tempy;l=tempx;
         break;break;
-        
+
 }
 */
 }
@@ -818,7 +818,7 @@ return 0;
 
 void fillwrong(){
 int l,o,w;
- for (l=0 ; l<9; l++){ 
+ for (l=0 ; l<9; l++){
   for (o=0 ; o<9; o++){
     for (w=0 ; w<9; w++){
       wrong[l][o][w]=true;
@@ -829,7 +829,7 @@ int l,o,w;
 
 void fillguessed(){
 int l,o,w;
- for (l=0 ; l<9; l++){ 
+ for (l=0 ; l<9; l++){
   for (o=0 ; o<9; o++){
       guessed[l][o]=false;
     }
@@ -875,7 +875,7 @@ char s[8];
 char err[100]="Wrong Key Inserted";
    // Clearing terminal screen using system function
    system("clear");
-  
+
   // filling nums and changed arrays witn zero and false values in the application start
   for (m = 0; m < 9; m++) {
     for (n = 0; n < 9; n++) {
@@ -896,7 +896,7 @@ while(1){
 
 getkey=getchar();
 switch(getkey){
-	case 112:	
+	case 112:
 	  for (m = 0; m < 9; m++) {
    	  for (n = 0; n < 9; n++) {
 	xtable= 1+ (n*2);
@@ -907,7 +907,7 @@ switch(getkey){
 	puts("");
     }
       printf("\033[1;2H");
-	break;	
+	break;
 
 
   case 115:
@@ -916,7 +916,7 @@ switch(getkey){
   //filltemp();
   fillwrong();
   fillguessed();
-  
+
   //solve_2();
   solve();
   printanswers();
@@ -953,14 +953,14 @@ return 0;
       printf("\033[1;2H");
       setBufferedInput(false);
       while(1){
-      // getting arrow keys from user repeatedly 
+      // getting arrow keys from user repeatedly
 	getkey= getchar();
       // check which arrow keys are pressed
       switch(getkey){
 
       // calling required functions when up key is pressed
       case 65:
-      
+
       printf("\033[6n");
       scanf("%7s",s);
       xup= rowcount(s);
@@ -970,10 +970,10 @@ return 0;
       }
 
       break;
-      
+
       // calling required functions when down key is pressed
       case 66:
-      
+
       printf("\033[6n");
       scanf("%7s",s);
       xdown= rowcount(s);
@@ -1000,7 +1000,7 @@ return 0;
 	setBufferedInput(true);
 	exit(status);
 	break;
-	
+
 
       // calling required functions when left key is pressed
       case 68:
@@ -1012,158 +1012,158 @@ return 0;
       printf("\033[1D");
       }
       break;
-	
+
       case 49:
       printf("\033[6n");
       scanf("%7s",s);
       xnum= rowcount(s);
-      ynum= colcount(s);	
+      ynum= colcount(s);
 	if (ynum != 1) {
   	 if (ynum%3==2) {
          num1= getkey - '0';
     	 nums[(ynum/3)][xnum-1]=num1;
-	 ischanged[ynum/3][xnum-1]=true;	
-         printf("\033[%d;%dH%d",xnum,ynum,num1);	
+	 ischanged[ynum/3][xnum-1]=true;
+         printf("\033[%d;%dH%d",xnum,ynum,num1);
 	}
 }
       break;
-	
-	
+
+
       case 50:
       printf("\033[6n");
       scanf("%7s",s);
       xnum= rowcount(s);
-      ynum= colcount(s);	
+      ynum= colcount(s);
 	if (ynum != 1) {
   	 if (ynum%3==2) {
          num1= getkey - '0';
     	 nums[(ynum/3)][xnum-1]=num1;
-	 ischanged[ynum/3][xnum-1]=true;	
-         printf("\033[%d;%dH%d",xnum,ynum,num1);	
+	 ischanged[ynum/3][xnum-1]=true;
+         printf("\033[%d;%dH%d",xnum,ynum,num1);
 	}
 }
       break;
-	
+
       case 51:
       printf("\033[6n");
       scanf("%7s",s);
       xnum= rowcount(s);
-      ynum= colcount(s);	
+      ynum= colcount(s);
 	if (ynum != 1) {
   	 if (ynum%3==2) {
          num1= getkey - '0';
     	 nums[(ynum/3)][xnum-1]=num1;
-	 ischanged[ynum/3][xnum-1]=true;	
-         printf("\033[%d;%dH%d",xnum,ynum,num1);	
+	 ischanged[ynum/3][xnum-1]=true;
+         printf("\033[%d;%dH%d",xnum,ynum,num1);
 	}
 }
       break;
-	
+
       case 52:
       printf("\033[6n");
       scanf("%7s",s);
       xnum= rowcount(s);
-      ynum= colcount(s);	
+      ynum= colcount(s);
 	if (ynum != 1) {
   	 if (ynum%3==2) {
          num1= getkey - '0';
     	 nums[(ynum/3)][xnum-1]=num1;
-	 ischanged[ynum/3][xnum-1]=true;	
-         printf("\033[%d;%dH%d",xnum,ynum,num1);	
+	 ischanged[ynum/3][xnum-1]=true;
+         printf("\033[%d;%dH%d",xnum,ynum,num1);
 	}
 }
       break;
-	
+
       case 53:
       printf("\033[6n");
       scanf("%7s",s);
       xnum= rowcount(s);
-      ynum= colcount(s);	
+      ynum= colcount(s);
 	if (ynum != 1) {
   	 if (ynum%3==2) {
          num1= getkey - '0';
     	 nums[(ynum/3)][xnum-1]=num1;
-	 ischanged[ynum/3][xnum-1]=true;	
-         printf("\033[%d;%dH%d",xnum,ynum,num1);	
+	 ischanged[ynum/3][xnum-1]=true;
+         printf("\033[%d;%dH%d",xnum,ynum,num1);
 	}
 }
       break;
-	
+
       case 54:
       printf("\033[6n");
       scanf("%7s",s);
       xnum= rowcount(s);
-      ynum= colcount(s);	
+      ynum= colcount(s);
 	if (ynum != 1) {
   	 if (ynum%3==2) {
          num1= getkey - '0';
     	 nums[(ynum/3)][xnum-1]=num1;
-	 ischanged[ynum/3][xnum-1]=true;	
-         printf("\033[%d;%dH%d",xnum,ynum,num1);	
+	 ischanged[ynum/3][xnum-1]=true;
+         printf("\033[%d;%dH%d",xnum,ynum,num1);
 	}
 }
       break;
-	
+
       case 55:
       printf("\033[6n");
       scanf("%7s",s);
       xnum= rowcount(s);
       scanf("%7s",s);
       xnum= rowcount(s);
-      ynum= colcount(s);	
+      ynum= colcount(s);
 	if (ynum != 1) {
   	 if (ynum%3==2) {
          num1= getkey - '0';
     	 nums[(ynum/3)][xnum-1]=num1;
-	 ischanged[ynum/3][xnum-1]=true;	
-         printf("\033[%d;%dH%d",xnum,ynum,num1);	
+	 ischanged[ynum/3][xnum-1]=true;
+         printf("\033[%d;%dH%d",xnum,ynum,num1);
 	}
 }
       break;
-	
+
       case 57:
       printf("\033[6n");
       scanf("%7s",s);
       xnum= rowcount(s);
-      ynum= colcount(s);	
+      ynum= colcount(s);
 	if (ynum != 1) {
   	 if (ynum%3==2) {
          num1= getkey - '0';
     	 nums[(ynum/3)][xnum-1]=num1;
-	 ischanged[ynum/3][xnum-1]=true;	
-         printf("\033[%d;%dH%d",xnum,ynum,num1);	
+	 ischanged[ynum/3][xnum-1]=true;
+         printf("\033[%d;%dH%d",xnum,ynum,num1);
 	}
 }
       break;
-	
+
 	case 127:
       printf("\033[6n");
       scanf("%7s",s);
       xdel= rowcount(s);
-      ydel= colcount(s);	
+      ydel= colcount(s);
 	if (ydel%3==0) {
       nums[(ydel/3)-1][xdel-1]=0;
-//	ischanged[ydel/3][xdel-1]=true;	
-      printf("\033[%d;%dH%1s",xdel,ydel-1," ");	
-         printf("\033[1D");	
+//	ischanged[ydel/3][xdel-1]=true;
+      printf("\033[%d;%dH%1s",xdel,ydel-1," ");
+         printf("\033[1D");
 	}
 	break;
-	
+
 	case 27:
       printf("\033[6n");
       scanf("%7s",s);
       xdel= rowcount(s);
-      ydel = colcount(s);	
+      ydel = colcount(s);
 	if (ydel != 1) {
 	if (ydel%3==0) {
-      nums[ydel/3][xdel-1]=0;	
-	ischanged[ydel/3][xdel-1]=true;	
-      printf("\033[%d;%dH%-2s",xdel,ydel,"D");	
+      nums[ydel/3][xdel-1]=0;
+	ischanged[ydel/3][xdel-1]=true;
+      printf("\033[%d;%dH%-2s",xdel,ydel,"D");
 	}
 }
 	break;
 
-	case 112:	
+	case 112:
 	  for (m = 0; m < 9; m++) {
    	  for (n = 0; n < 9; n++) {
 	xtable= 1+ (n*2);
@@ -1175,8 +1175,8 @@ return 0;
     }
       printf("\033[1;2H");
 	break;
-	
-	
+
+
 	case 116:
 	checkrow= checkrows();
 	checkcol= checkcols();
@@ -1187,19 +1187,19 @@ return 0;
 	printf("\033[11;5H%15s","Same numbers inserteed in few Rows");
    	printf("\033[1;2H");
 	}
-	
+
 	else if (checkcol==false) {
 	printf("\033[11;5H%15s","                                   ");
 	printf("\033[11;5H%15s","Same numbers inserted in few Coloumns");
    	printf("\033[1;2H");
 	}
-	
+
 	else if (checkbox==false) {
 	printf("\033[11;5H%15s","                                   ");
 	printf("\033[11;5H%15s","Same numbers inserted in few Boxes");
    	printf("\033[1;2H");
 	}
-	else{	
+	else{
 	printf("\033[11;5H%15s","                                   ");
 	printf("\033[11;5H%15s","Correct Puzzle");
    	printf("\033[1;2H");
@@ -1208,9 +1208,9 @@ return 0;
 	break;
 
 
-  }   
   }
-*/  
+  }
+*/
 //  return 0;
 
   //}
